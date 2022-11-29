@@ -8,8 +8,7 @@ COPY Gemfile .
 
 RUN bundle install
 
-
-EXPOSE 4567
+EXPOSE 3001
 
 COPY . /app
 
