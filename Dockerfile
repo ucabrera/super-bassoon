@@ -13,4 +13,4 @@ EXPOSE 4567
 
 COPY . /app
 
-CMD ["bundle", "exec", "thin", "start", "-p", "4567"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
