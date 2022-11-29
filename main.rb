@@ -31,10 +31,12 @@ class JwtAuth
   
   end
 
+
 class Api < Sinatra::Base
 
     use JwtAuth
-    
+    def initialize
+      super
     @espacios = {
         "id_espacio": 2001,
         "nombre": "ALVAREZ HNOS.",
