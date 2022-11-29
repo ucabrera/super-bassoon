@@ -8,8 +8,8 @@ COPY Gemfile .
 
 RUN bundle install
 
-EXPOSE 3001
+EXPOSE 4567
 
 COPY . /app
 
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["bundle", "exec", "thin", "start", "-p", "4567"]

@@ -89,13 +89,17 @@ class Api < Sinatra::Base
     end
     
     post '/search' do
-      costo = dias * 99 + 3000 + (rand 20000)
-      espacio = @espacio.sample 1
-      espacio ["costo"] = (costo + rand(-250..250)).to_s + 'US$'
-      espacio ["id_consulta"] = 6000 + (rand 999) 
-      espacio ["dias"] = params[:dias]
-      espacio ["fecha"] = params[:fecha]
-      espacio.to_json
+      dias = params[:dias].to_i
+      arr = []
+      costo = dias * 99 + 3000 + (rand 15000..20000)
+      @espacios.sample(3).map{ |e|
+        espacio = {}
+        espacio["id_consulta"] = 6000 + (rand 999) 
+        espacio["precio"] = (costo + rand(-250..250)).to_s + ' US$'
+        espacio["espacio"] = e
+        arr.push(espacio)    
+      }
+      arr.to_json
     end
       
     post '/reserve' do
