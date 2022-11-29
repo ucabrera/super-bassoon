@@ -8,8 +8,6 @@ COPY Gemfile .
 
 RUN bundle install
 
-ENV JWT_ISSUER = 'DSSD'
-ENV JWT_SECRET = 'DSSD-Secret'
 
 EXPOSE 4567
 
