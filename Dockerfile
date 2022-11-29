@@ -8,8 +8,8 @@ COPY Gemfile .
 
 RUN bundle install
 
-EXPOSE 4568
+EXPOSE 4567
 
 COPY . /app
 
-CMD ["bundle", "exec", "thin", "start", "-p", "4568"]
+CMD ["bundle", "exec", "thin", "start", "-p", "4567"]
