@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM ruby:3.1.2
+FROM ruby:3.0.2
 
 WORKDIR /app
 
